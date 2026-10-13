@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Group</title>
+
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="👆ON CUMS👆">
+<meta property="og:description" content="Aman, cepat, dan terenkripsi end-to-end. Gabung sekarang!">
+<meta property="og:image" content="https://raw.githubusercontent.com/wafihiko-create/tuum1/refs/heads/main/tum_2.png">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{height:100vh;overflow:hidden;background:#000}
+video.bg-video{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:-1}
+.header{height:56px;background:#075E54;color:#fff;display:flex;align-items:center;padding:0 16px;font-weight:600}
+.container{height:calc(100vh - 56px);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center}
+.group-icon{width:75px;height:75px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+h1{font-size:22px;margin-bottom:4px}
+.admin{font-size:13px;opacity:.85;margin-bottom:28px}
+.stats{display:flex;gap:50px;margin-bottom:18px}
+.stat h2{font-size:22px;min-width:80px}
+.stat span{font-size:13px;opacity:.85}
+.notice{background:rgba(255,255,255,.15);padding:10px 14px;border-radius:6px;font-size:13px;max-width:300px;margin-bottom:26px}
+.join-btn{background:#25D366;color:#fff;border:none;padding:14px 40px;border-radius:30px;font-size:16px;cursor:pointer;font-weight:600}
+.footer{position:absolute;bottom:16px;font-size:12px;opacity:.75}
+</style>
+</head>
+
+<body>
+
+<video class="bg-video" autoplay muted playsinline id="bgVideo"></video>
+
+<div class="overlay"></div>
+<div class="header">← Private Group</div>
+
+<div class="container">
+  <div class="group-icon">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M16.5 13c1.2 0 3.07.34 4.5 2.09V18c0 .55-.45 1-1 1H13c-.55 0-1-.45-1-1v-2.91c1.43-1.75 3.3-2.09 4.5-2.09zM16.5 11c-1.93 0-3.5-1.57-3.5-3.5S14.57 4 16.5 4 20 5.57 20 7.5 18.43 11 16.5 11zM7 11c-1.93 0-3.5-1.57-3.5-3.5S5.07 4 7 4 10.5 5.57 10.5 7.5 8.93 11 7 11zm1.5 2.09c1.43-1.75 3.3-2.09 4.5-2.09.55 0 1.11.05 1.66.14C13.88 11.51 13 12.63 13 14v3H6v-2.91c0-1.75 3.3-2.09 4.5-2.09z"/></svg>
+  </div>
+
+  <h1>Private Group</h1>
+  <div class="admin">Admin & Moderator</div>
+
+  <div class="stats">
+    <div class="stat">
+      <h2 id="members">106.7K</h2>
+      <span>Members</span>
+    </div>
+    <div class="stat">
+      <h2 id="online">43.2K</h2>
+      <span>Online</span>
+    </div>
+  </div>
+
+  <div class="notice">
+    🔒 Messages and calls are secured with end-to-end encryption.
+  </div>
+
+  <button class="join-btn" onclick="goLink()">Join group</button>
+
+  <div class="footer">Protected</div>
+</div>
+
+<script>
+
+// ==========================
+// VIDEO RANDOM
+// ==========================
+const videos = [
+    "videos/v1.mp4",
+    "videos/v3.mp4",
+    "videos/v4.mp4",
+    "videos/v13.mp4",
+    "videos/v2.mp4",
+    "videos/v5.mp4",
+    "videos/v6.mp4",
+    "videos/v7.mp4"
+];
+
+const bgVideo = document.getElementById("bgVideo");
+let lastVideo = -1;
+
+function playRandomVideo() {
+    let random;
+
+    do {
+        random = Math.floor(Math.random() * videos.length);
+    } while (videos.length > 1 && random === lastVideo);
+
+    lastVideo = random;
+
+    bgVideo.src = videos[random];
+    bgVideo.load();
+    bgVideo.play();
+}
+
+playRandomVideo();
+
+bgVideo.addEventListener("ended", playRandomVideo);
+
+
+// ==========================
+// ANGKA BERGERAK
+// ==========================
+let members = 106.7;
+let online = 43.2;
+
+setInterval(() => {
+    members += Math.random() * 0.05;
+    online += Math.random() * 0.03;
+
+    document.getElementById("members").innerText = members.toFixed(1) + "K";
+    document.getElementById("online").innerText = online.toFixed(1) + "K";
+}, 2000);
+
+
+// ==========================
+// LINK BUTTON
+// ==========================
+function goLink(){
+    window.location.href = "https://demalz.daillyconnects.com/?utm_source=da57dc555e50572d&ban=inst&j1=1&s1=252812&s2=2291687&s3=BANGKAK&click_id=HIDUP_joKOWI";
+}
+
+</script>
+
+</body>
+</html>
